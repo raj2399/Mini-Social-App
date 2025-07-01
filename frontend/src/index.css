@@ -1,0 +1,293 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #dbeafe 0%, #f7f7fa 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before, body::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+body::before {
+  left: 2vw;
+  top: 8vh;
+  width: 80px;
+  height: 80px;
+  background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3b2.png') no-repeat center/contain;
+  opacity: 0.13;
+}
+body::after {
+  right: 3vw;
+  bottom: 10vh;
+  width: 90px;
+  height: 90px;
+  background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4b0.png') no-repeat center/contain;
+  opacity: 0.12;
+}
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 1.2rem 0.5rem 2rem 0.5rem;
+  background: rgba(255,255,255,0.97);
+  min-height: 100vh;
+  box-shadow: 0 4px 24px #0002, 0 1.5px 4px #4f8cff22;
+  border-radius: 18px;
+  position: relative;
+  z-index: 1;
+}
+header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+header h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #3b3b5c;
+  margin: 0.5rem 0 0.2rem 0;
+}
+.wallet {
+  background: linear-gradient(90deg, #e0e7ff 60%, #f0f4ff 100%);
+  padding: 1.1rem 1rem 1.2rem 1rem;
+  border-radius: 14px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px #4f8cff11;
+  border: 1px solid #e3eafc;
+  position: relative;
+  z-index: 2;
+}
+.wallet::after {
+  content: '';
+  position: absolute;
+  right: 18px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3af.png') no-repeat center/contain;
+  opacity: 0.13;
+  z-index: 0;
+}
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.wallet-header span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3a4a;
+}
+.recharge button {
+  margin-left: 0.5rem;
+  background: linear-gradient(90deg, #4f8cff 60%, #43a047 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.35rem 0.9rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px #4f8cff22;
+  transition: background 0.2s, transform 0.1s;
+}
+.recharge button:hover {
+  background: linear-gradient(90deg, #43a047 60%, #4f8cff 100%);
+  transform: translateY(-2px) scale(1.05);
+}
+.transactions {
+  margin-top: 0.7rem;
+}
+.transactions h4 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.02rem;
+  color: #3b3b5c;
+}
+.transactions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.transactions li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.98em;
+  margin-bottom: 0.3rem;
+  background: #f7faff;
+  border-radius: 5px;
+  padding: 0.18rem 0.5rem;
+  align-items: center;
+}
+.transactions li.credit { color: #2e7d32; }
+.transactions li.debit { color: #c62828; }
+.lobby {
+  margin-top: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+.games {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  position: relative;
+  z-index: 2;
+}
+.game-card {
+  background: linear-gradient(100deg, #e3eafc 70%, #f0f4ff 100%);
+  padding: 1.1rem 0.7rem 1.2rem 0.7rem;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 2px 8px #4f8cff11;
+  border: 1px solid #e3eafc;
+  transition: box-shadow 0.2s, transform 0.1s;
+  position: relative;
+  z-index: 2;
+}
+.game-card::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 28px;
+  height: 28px;
+  background: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3b0.png') no-repeat center/contain;
+  opacity: 0.10;
+  z-index: 0;
+}
+.game-card:hover {
+  box-shadow: 0 4px 16px #4f8cff22;
+  transform: translateY(-2px) scale(1.02);
+}
+.game-card h3 {
+  margin: 0.2rem 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #3b3b5c;
+}
+.game-card p {
+  margin: 0.2rem 0;
+  color: #4f5b7c;
+  font-size: 1.01rem;
+}
+.game-card button {
+  margin-top: 0.7rem;
+  background: linear-gradient(90deg, #43a047 60%, #4f8cff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 1.3rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 1px 4px #4f8cff22;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.game-card button:hover {
+  background: linear-gradient(90deg, #4f8cff 60%, #43a047 100%);
+  transform: translateY(-2px) scale(1.05);
+}
+.error {
+  color: #c62828;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  background: #ffeaea;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+}
+.game-screen {
+  text-align: center;
+  margin-top: 2.2rem;
+}
+.game-screen h2 {
+  color: #3b3b5c;
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+}
+.game-screen p {
+  color: #4f5b7c;
+  font-size: 1.08rem;
+}
+.game-screen button {
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, #1976d2 60%, #4f8cff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1.7rem;
+  font-weight: 600;
+  font-size: 1.08rem;
+  box-shadow: 0 1px 4px #4f8cff22;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.game-screen button:hover {
+  background: linear-gradient(90deg, #4f8cff 60%, #1976d2 100%);
+  transform: translateY(-2px) scale(1.05);
+}
+@media (max-width: 500px) {
+  .container { max-width: 100vw; padding: 0.5rem; border-radius: 0; }
+  .wallet, .game-card { padding: 0.7rem; }
+}
+.tx-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f4f7ff;
+  border-radius: 24px;
+  box-shadow: 0 1px 4px #4f8cff11;
+  padding: 0.45em 1em;
+  margin-bottom: 0.7em;
+  font-size: 1.01em;
+  border: 1px solid #e0e7ff;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+.tx-item.credit {
+  border-left: 4px solid #43a047;
+}
+.tx-item.debit {
+  border-left: 4px solid #c62828;
+}
+.tx-icon {
+  font-size: 1.2em;
+  margin-right: 0.5em;
+  flex-shrink: 0;
+}
+.tx-desc {
+  flex: 1 1 120px;
+  min-width: 0;
+  color: #3b3b5c;
+  font-weight: 500;
+  margin-right: 0.5em;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tx-amount {
+  font-weight: 700;
+  color: #1976d2;
+  min-width: 3.5em;
+  text-align: right;
+  margin-left: 0.5em;
+}
+.tx-item.credit .tx-amount {
+  color: #43a047;
+}
+.tx-item.debit .tx-amount {
+  color: #c62828;
+}
+.tx-date {
+  color: #7a7a8c;
+  font-size: 0.88em;
+  margin-left: 0.7em;
+  min-width: 6em;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+  max-width: 90px;
+}
